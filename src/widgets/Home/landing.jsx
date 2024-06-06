@@ -43,7 +43,7 @@ function Landing() {
           className="w-fit   bg-htext dark:bg-dhtext dark:text-darkbg text-background text-[15px] sm:text-[18px]  p-4 py-3  mt-5 font-robo border-2 border-[#f8f8f8] dark:border-[#333333] hover:shadow-lg hover:shadow-gray-700  transition duration-500"
           id="CV"
           onClick={() => {
-            window.open("https://drive.google.com/file/d/1BkajcFbrOGhVKOgPeFXf0Qr6ohZiuLQe/view?usp=sharing");
+            window.open("https://drive.google.com/file/d/1fA8P0uQY1j7_w_A1KxVF1bT6I0yObGy9/view?usp=sharing");
           }}
           // onClick="window.open('./img/RESUME.pdf')"
         >
