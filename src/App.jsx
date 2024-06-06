@@ -1,5 +1,8 @@
 import Layout from "./layout/layout.jsx";
-import useTheme, { ThemeContext, ThemeProvider } from "./context/useTheme";
+import useTheme, {
+  ThemeContext,
+  ThemeProvider,
+} from "./context/useTheme";
 import { useState, useEffect } from "react";
 import {
   createBrowserRouter,
@@ -7,7 +10,13 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { Home, About, Project_List, Project_Detail } from "./widgets/index.js";
+import {
+  Home,
+  About,
+  Project_List,
+  Project_Detail,
+  Contact,
+} from "./widgets/index.js";
 
 const route = createBrowserRouter(
   createRoutesFromElements(
@@ -16,9 +25,9 @@ const route = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="project" element={<Project_List />} />
       <Route path="project/:id/:pid" element={<Project_Detail />} />
-      {/* <Route path="contact" element={<Contact />} /> */}
-    </Route>
-  )
+      <Route path="contact" element={<Contact />} />
+    </Route>,
+  ),
 );
 
 function App() {

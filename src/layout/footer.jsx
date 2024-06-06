@@ -1,80 +1,60 @@
 import { Icon } from "@iconify/react";
+import { NavLink } from "react-router-dom";
+import { socials } from "../widgets/socials";
 
 const Footer = () => {
   return (
-    <>
-      <div
-        id="credits"
-        className="py-5 px-3"
-      >
-        <div className=" text-background dark:text-darkbg sm:mt-8 flex flex-wrap gap-5 sm:gap-7 justify-center">
-          {/*---Github---*/}
-          <a
-            href="https://github.com/SAMI-THAKUR"
-            target="_blank"
-          >
-            <Icon
-              icon="mdi:github"
-              className=" text-background dark:text-[#B4B4B3] text-[30px] sm:text-[35px] font-light hover:text-[#211F1F] transition duration-500 hover:scale-105"
-            />
-          </a>
-          {/*---Leetcode---*/}
-          <a
-            href="https://leetcode.com/SAMI_THAKUR/"
-            target="_blank"
-          >
-            <Icon
-              icon="tabler:brand-leetcode"
-              className=" text-background dark:text-[#B4B4B3] text-[30px] sm:text-[35px] font-light hover:text-[#FFA116] transition duration-500 hover:scale-105"
-            />
-          </a>
-          {/*---Linkedin---*/}
-          <a
-            href="https://www.linkedin.com/in/sami-thakur-6072b8256/"
-            target="_blank"
-          >
-            <Icon
-              icon="mdi:linkedin"
-              className=" text-background dark:text-[#B4B4B3] text-[30px] sm:text-[35px] font-light hover:text-[#0A66C2] transition duration-500 hover:scale-105"
-            />
-          </a>
-          {/*---Twitter---*/}
-          <a
-            href="https://twitter.com/home?lang=en-in"
-            target="_blank"
-          >
-            <Icon
-              icon="mdi:twitter"
-              className=" text-background dark:text-[#B4B4B3] text-[30px] sm:text-[35px] font-light hover:text-[#1DA1F2] transition duration-500 hover:scale-105"
-            />
-          </a>
-          {/*---Mail---*/}
-          <a
-            href="mailto:2022.sami.thakur@ves.ac.in"
-            target="_blank"
-          >
-            <Icon
-              icon="tabler:mail-filled"
-              className=" text-background dark:text-[#B4B4B3] text-[30px] sm:text-[35px] font-light hover:text-[#D44638] transition duration-500 hover:scale-105"
-            />
-          </a>
-          {/*---Instagram---*/}
-          <a
-            href="https://www.instagram.com/sami_thakur_/?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
-            target="_blank"
-          >
-            <Icon
-              icon="mdi:instagram"
-              className=" text-background dark:text-[#B4B4B3] text-[30px] sm:text-[35px] font-light hover:text-[#C13584] transition duration-500 hover:scale-105"
-            />
-          </a>
+    <footer className="bg-htext dark:bg-dhtext shadow pb-1">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8 ">
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <ul className="flex flex-wrap items-center mb-6 text-base font-staat tracking-wide font-medium dark:text-[#404258] text-[#b5b5b5] sm:mb-0 ">
+            <li>
+              <NavLink to="/" className=" hover:underline me-4 md:me-6 transition duration-300">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="about" className=" hover:underline  me-4 md:me-6 transition duration-300">
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="project" className=" hover:underline  me-4 md:me-6 transition duration-300">
+                Project
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="contact" className=" hover:underline  me-4 md:me-6 transition duration-300">
+                Contact
+              </NavLink>
+            </li>
+          </ul>
         </div>
-        <div className="text-red-500 mt-5 flex flex-wrap gap-10 justify-center text-[20px] sm:text-[30px] font-staat tracking-wider">
-          Desing & Developed by
-          &lt;/SAMI&gt;
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div className="sm:flex sm:items-center sm:justify-between align-middle">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            <div className="text-red-500 mt-5 flex flex-wrap gap-10 align-middle text-[15px] sm:text-[20px] font-staat tracking-wider">
+              Desing & Developed by &lt;/SAMI&gt;
+            </div>
+          </span>
+          <div className="flex mt-4 sm:justify-center sm:mt-0 align-middle gap-5">
+            {socials.map((social, index) => {
+              return (
+                <a
+                  href={social.url}
+                  className="text-gray-500 hover:text-dhtext dark:hover:text-htext transition duration-300 "
+                  target="_blank"
+                  key={index}
+                >
+                  <Icon icon={social.logo} className="text-2xl sm:text-[27px]" />
+                  <span class="sr-only">{social.name}</span>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </>
+    </footer>
   );
 };
 

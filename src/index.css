@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.active {
+.nav {
+  border-color: #181818;
+}
+
+nav .active {
   border-bottom: solid;
   border-bottom-width: 2px;
   border-top-width: 2px;
@@ -10,7 +14,7 @@
   transition: ease-in 100ms;
 }
 
-.dark .active {
+.dark nav .active {
   border-color: #d5d5d5;
 }
 

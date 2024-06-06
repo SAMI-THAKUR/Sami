@@ -1,36 +1,43 @@
 import { projects } from "./projects";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 export default function ProductDetail() {
   const { id, pid } = useParams();
-  const project = projects.find(
-    (project) => project.id === id,
-  );
+  const project = projects.find((project) => project.id === id);
   const content = project.content.find(
     (content) => content.pid === pid,
   );
 
   return (
-    <section
-      id="SKILLS"
-      className=" pl-10 sm:pl-20 lg:pl-32 py-36 pb-10 dark:bg-darkbg bg-background pr-10"
-    >
+    <section className=" pl-10 sm:pl-20 lg:pl-32 py-36 pb-10 dark:bg-darkbg bg-background pr-10">
       <div class="max-w-xl mx-auto">
-        <div class="flex items-start justify-between mb-2">
-          <h1 class="font-staat  tracking-wide- sm:text-5xl text-3xl mb-4 max-w-sm dark:text-dhtext text-htext">
+        <NavLink to="/project">
+          <div class="flex  gap-1 mb-6 align-middle cursor-pointer">
+            <Icon
+              icon="ion:caret-back"
+              className="text-base text-[#404258] dark:text-[#b5b5b5] flex align-middle my-auto"
+            />
+            <h1 class="font-mono  tracking-wide text-[18px]   max-w-sm text-[#404258] dark:text-[#b5b5b5]">
+              Projects
+            </h1>
+          </div>
+        </NavLink>
+        <div class="flex items-start justify-between mb-6 align-middle">
+          <h1 class="font-staat  tracking-wide- md:text-4xl text-2xl mt-1 sm:mt-0   max-w-sm dark:text-dhtext text-htext">
             {content.name}
           </h1>
-          <div className="flex flex-wrap mt-2">
+
+          <div className="flex flex-wrap mt-2 align-middle">
             {content.link && (
               <a
                 href={content.link}
                 target="_blank"
-                class="dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-zinc-700"
+                class="dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-htext dark:hover:border-dhtext  transition duration-200"
               >
                 <Icon
                   icon="akar-icons:link-out"
-                  className="text-2xl text-htext dark:text-dhtext"
+                  className="text-xl sm:text-2xl text-htext dark:text-dhtext"
                 />
               </a>
             )}
@@ -38,11 +45,11 @@ export default function ProductDetail() {
               <a
                 href={content.github}
                 target="_blank"
-                class="dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-zinc-700"
+                class="dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-htext dark:hover:border-dhtext  transition duration-200"
               >
                 <Icon
                   icon="bi:github"
-                  className="text-2xl text-htext dark:text-dhtext"
+                  className="text-xl sm:text-2xl text-htext dark:text-dhtext"
                 />
               </a>
             )}
@@ -60,23 +67,21 @@ export default function ProductDetail() {
             Tech Stack
           </div>
           <div className="flex flex-wrap mb-4 -ml-3">
-            {content.tech_stack.map(
-              (tech, index) => {
-                return (
-                  <a
-                    href={tech.link}
-                    target="_blank"
-                    key={index}
-                    class="dark:bg-primary-bg bg-secondary-bg border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-zinc-700"
-                  >
-                    <Icon
-                      icon={tech.icon}
-                      className="text-[23px] text-[#404258] dark:text-[#b5b5b5]"
-                    />
-                  </a>
-                );
-              },
-            )}
+            {content.tech_stack.map((tech, index) => {
+              return (
+                <a
+                  href={tech.link}
+                  target="_blank"
+                  key={index}
+                  class="dark:bg-primary-bg bg-secondary-bg border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-htext dark:hover:border-dhtext hover:-translate-y-0.5 transition duration-200"
+                >
+                  <Icon
+                    icon={tech.icon}
+                    className="text-[25px] text-[#404258] dark:text-[#b5b5b5] hover:text-htext dark:hover:text-dhtext"
+                  />
+                </a>
+              );
+            })}
           </div>
           <div className="font-staat font-semibold text-htext dark:text-dhtext text-[30px] tracking-wider">
             Overview

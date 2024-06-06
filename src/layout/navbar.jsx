@@ -32,10 +32,7 @@ const NavBar = () => {
       className="fixed w-full top-0  gap-y-2 bg-secondary  dark:bg-dsecondary duration-500 z-50  border-b-2 border-htext dark:border-gray-800 shadow-xl"
       id="nav"
     >
-      <div
-        className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5"
-        id="container"
-      >
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5" id="container">
         <button
           id="theme-toggle"
           onClick={toggle}
@@ -53,37 +50,27 @@ const NavBar = () => {
           <span className="sr-only">Open main menu</span>
           <i className="fa-solid fa-bars w-5 h-5 text-2xl"></i>
         </button>
-        <div
-          className={`w-full md:block md:w-auto ${open ? "block" : "hidden"}`}
-          id="navbar-default"
-        >
+        <div className={`w-full md:block md:w-auto ${open ? "block" : "hidden"}`} id="navbar-default">
           <ul className="font-extrabold font-robo tracking-wider text-[14px] flex flex-col p-3 md:p-0 mt-8  bg- md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-background dark:bg-darkbg dark:md:bg-transparent md:bg-transparent gap-5">
             <li className="py-0">
-              <NavLink
-                to="/"
-                className="block py-2 px-2 text-htext dark:text-dhtext nav mt-0"
-              >
+              <NavLink to="/" className="block py-2 px-2 text-htext dark:text-dhtext nav mt-0">
                 Home
               </NavLink>
             </li>
             <li className="py-0">
-              <NavLink
-                to="about"
-                className="block py-2 px-2 text-htext dark:text-dhtext nav mt-0"
-              >
+              <NavLink to="about" className="block py-2 px-2 text-htext dark:text-dhtext nav mt-0">
                 About
               </NavLink>
             </li>
             <li className="py-0">
-              <NavLink
-                to="project"
-                className="block py-2 px-2 text-htext dark:text-dhtext nav mt-0"
-              >
+              <NavLink to="project" className="block py-2 px-2 text-htext dark:text-dhtext nav mt-0">
                 Project
               </NavLink>
             </li>
-            <li className="p-3 bg-htext hover:bg-background dark:hover:bg-darkbg dark:bg-dhtext dark:hover:text-dhtext hover:text-htext text-background dark:text-darkbg duration-300 hover:border-htext dark:hover:border-dhtext border-2">
-              <NavLink to="contact">Contact Me</NavLink>
+            <li className="py-0">
+              <NavLink to="contact" className="block py-2 px-2 text-htext dark:text-dhtext nav mt-0">
+                Contact Me
+              </NavLink>
             </li>
           </ul>
         </div>
