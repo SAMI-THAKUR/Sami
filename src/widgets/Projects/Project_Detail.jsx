@@ -44,7 +44,7 @@ export default function ProductDetail() {
         <figure className="max-w-lg flex items-center justify-center">
           <img
             className="h-auto max-w-full  border-[1px] dark:border-dhtext border-htext mt-1 p-2 object-cover "
-            src={`/public/assets/${content.image}`}
+            src={`/assets/${content.image}`}
           ></img>
         </figure>
         <div className="mt-6 dark:text-zinc-400 text-zinc-600 leading-relaxed">

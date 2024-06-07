@@ -15,7 +15,7 @@ export default function Info() {
           </div>
           <div className="sm:ml-10 lg:ml-32 lg:block lg:w-1/2 flex items-center ">
             <div className="justify-center flex">
-              <img src="./public/assets/profile-pic.png" width={350} height={350} />
+              <img src="./assets/profile-pic.png" width={350} height={350} />
             </div>
           </div>
         </div>
