@@ -11,7 +11,7 @@ const socials = [
   },
   {
     name: "leetcode",
-    url: "https://leetcode.com/user0351hg/",
+    url: "https://leetcode.com/u/SamiThakur/",
     logo: "simple-icons:leetcode",
   },
   {

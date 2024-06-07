@@ -7,7 +7,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   return (
-    <section class=" dark:bg-darkbg bg-background pr-5 pt-16" id="contact">
+    <section class=" dark:bg-darkbg bg-background pr-5 pt-16 h-[650px]" id="contact">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div class="">
           <div class=" max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
