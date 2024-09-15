@@ -55,6 +55,62 @@ let projects = [
         desc2:
           "The aim of this project is to demonstrate my proficiency in both front-end and back-end technologies, showcasing my ability to build full-stack applications from scratch.",
       },
+      {
+        pid: "money_map",
+        name: "Money Map",
+        short_description: "Budget Tracking App using GraphQL",
+        logo: "/assets/money_map_logo.png",
+        link: "https://budgetql.onrender.com",
+        github: "https://github.com/SAMI-THAKUR/Budget_Tracker_Graph_QL",
+        image: "money_map_pic.png",
+        tech_stack: [
+          {
+            icon: Icons.graphql,
+            link: "https://graphql.org/",
+          },
+          {
+            icon: Icons.apollo,
+            link: "https://www.apollographql.com/",
+          },
+          {
+            icon: Icons.express,
+            link: "https://expressjs.com/",
+          },
+          {
+            icon: Icons.monog_db,
+            link: "https://www.mongodb.com/docs/",
+          },
+          {
+            icon: Icons.mongoose,
+            link: "https://mongoosejs.com/docs/",
+          },
+          {
+            icon: Icons.passport,
+            link: "https://www.passportjs.org/packages/passport-local/",
+          },
+          {
+            icon: Icons.react,
+            link: "https://reactjs.org/",
+          },
+          {
+            icon: Icons.redux,
+            link: "https://redux.js.org/",
+          },
+          {
+            icon: Icons.react_router,
+            link: "https://reactrouter.com/",
+          },
+          {
+            icon: Icons.tailwind,
+            link: "https://tailwindcss.com/",
+          },
+        ],
+        desc1:
+          "I've built a comprehensive Budget Tracker that offers advanced features for managing finances, including transaction filtering, engaging visualizations, and a clean user interface. This project enables users to track their spending efficiently, ensuring an intuitive and insightful experience.",
+
+        desc2:
+          "This project highlights my skills in developing full-stack applications, utilizing GraphQL for dynamic data handling and Passport.js for secure authentication, demonstrating my ability to create robust and user-friendly financial tools.",
+      },
     ],
   },
   // {

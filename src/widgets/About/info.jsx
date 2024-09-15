@@ -6,10 +6,11 @@ export default function Info() {
           <div className=" relative  lg:max-w-xl">
             <div className="lg:pr-5 relative z-40">
               <p className=" text-[14px] sm:text-[17px] text-[#404258] dark:text-[#b5b5b5] font-robo tracking-wide mt-5">
-                Hello, my name is Sami I am a second-year engineering student at VESIT (Mumbai), majoring in Artificial Intelligence and Data Science.
-                I've been coding for about a year having started with JAVA and HTML and made some static html sites. Fast forward today I have a
-                strong hand on core JAVA. Currently my main focus is learning FULL STACK WEB DEVELOPMENT and DSA in JAVA and in the future I aspire to
-                learn about MACHINE LEARNING & DATA SCIENCE
+                Hello, my name is Sami. I am a third-year engineering student at VESIT (Mumbai), majoring in Artificial Intelligence and Data Science.
+                Over the past two years, I've developed a strong proficiency in Full Stack Web Development, having completed several projects that
+                showcase my skills in building comprehensive applications. I have a solid grasp of core Java and am well-versed in machine learning
+                algorithms. Currently, I am actively solving LeetCode problems, with a rating of 1550, and am expanding my knowledge in Deep Learning
+                and Generative AI.
               </p>
             </div>
           </div>

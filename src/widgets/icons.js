@@ -12,6 +12,9 @@ const Icons = {
   css: "simple-icons:css3",
   firebase: "ri:firebase-fill",
   tailwind: "simple-icons:tailwindcss",
+  graphql: "mdi:graphql",
+  passport: "simple-icons:passport",
+  apollo: "simple-icons:apollographql",
 };
 
 export { Icons };

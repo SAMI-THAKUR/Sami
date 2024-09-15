@@ -1,22 +1,8 @@
 import Layout from "./layout/layout.jsx";
-import useTheme, {
-  ThemeContext,
-  ThemeProvider,
-} from "./context/useTheme";
+import useTheme, { ThemeContext, ThemeProvider } from "./context/useTheme";
 import { useState, useEffect } from "react";
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import {
-  Home,
-  About,
-  Project_List,
-  Project_Detail,
-  Contact,
-} from "./widgets/index.js";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import { Home, About, Project_List, Project_Detail, Contact } from "./widgets/index.js";
 
 const route = createBrowserRouter(
   createRoutesFromElements(

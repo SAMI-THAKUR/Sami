@@ -5,8 +5,8 @@ export default function Education() {
     <div className="bg-background dark:bg-darkbg pb-28 px-10">
       <div className="font-staat font-semibold text-htext dark:text-dhtext text-[40px] tracking-wider mb-10"># EDUCATION</div>
       <ol className="items-center sm:flex ">
-        <Li name="BE in Artificial Inetlligence at VESIT-Mumbai" time="2022 - 2026" percentage="CGPA: 8.5"></Li>
-        <Li name="HSC at Swami Vivekanand Jr. College" time="2020 - 2022" percentage="Percentage: 85%"></Li>
+        <Li name="BE in Artificial Inetlligence at VESIT-Mumbai" time="2022 - 2026" percentage="CGPA: 9.4"></Li>
+        <Li name="HSC at Swami Vivekanand Jr. College" time="2020 - 2022" percentage="Percentage: 89%"></Li>
         <li className="relative mb-6 sm:mb-0">
           <div className="flex items-center">
             <div className="z-10 flex items-center justify-center w-6 h-6 bg-htext rounded-full ring-0 ring-white dark:bg-dhtext sm:ring-8 dark:ring-dsecondary shrink-0">
