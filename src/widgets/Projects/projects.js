@@ -18,36 +18,36 @@ let projects = [
         image: "thread_pic.png",
         tech_stack: [
           {
-            icon: Icons.express,
-            link: "https://expressjs.com/",
+            icon: Icons.express.icons,
+            link: Icons.express.link,
           },
           {
-            icon: Icons.monog_db,
-            link: "https://www.mongodb.com/docs/",
+            icon: Icons.monog_db.icons,
+            link: Icons.monog_db.link,
           },
           {
-            icon: Icons.mongoose,
-            link: "https://mongoosejs.com/docs/",
+            icon: Icons.mongoose.icons,
+            link: Icons.mongoose.link,
           },
           {
-            icon: Icons.jwt,
-            link: "https://jwt.io/",
+            icon: Icons.jwt.icons,
+            link: Icons.jwt.link,
           },
           {
-            icon: Icons.react,
-            link: "https://reactjs.org/",
+            icon: Icons.react.icons,
+            link: Icons.react.link,
           },
           {
-            icon: Icons.redux,
-            link: "https://redux.js.org/",
+            icon: Icons.redux.icons,
+            link: Icons.redux.link,
           },
           {
-            icon: Icons.react_router,
-            link: "https://reactrouter.com/",
+            icon: Icons.react_router.icons,
+            link: Icons.react_router.link,
           },
           {
-            icon: Icons.tailwind,
-            link: "https://tailwindcss.com/",
+            icon: Icons.tailwind.icons,
+            link: Icons.tailwind.link,
           },
         ],
         desc1:
@@ -65,44 +65,44 @@ let projects = [
         image: "money_map_pic.png",
         tech_stack: [
           {
-            icon: Icons.graphql,
-            link: "https://graphql.org/",
+            icon: Icons.graphql.icons,
+            link: Icons.graphql.link,
           },
           {
-            icon: Icons.apollo,
-            link: "https://www.apollographql.com/",
+            icon: Icons.apollo.icons,
+            link: Icons.apollo.link,
           },
           {
-            icon: Icons.express,
-            link: "https://expressjs.com/",
+            icon: Icons.express.icons,
+            link: Icons.express.link,
           },
           {
-            icon: Icons.monog_db,
-            link: "https://www.mongodb.com/docs/",
+            icon: Icons.monog_db.icons,
+            link: Icons.monog_db.link,
           },
           {
-            icon: Icons.mongoose,
-            link: "https://mongoosejs.com/docs/",
+            icon: Icons.mongoose.icons,
+            link: Icons.mongoose.link,
           },
           {
-            icon: Icons.passport,
-            link: "https://www.passportjs.org/packages/passport-local/",
+            icon: Icons.passport.icons,
+            link: Icons.passport.link,
           },
           {
-            icon: Icons.react,
-            link: "https://reactjs.org/",
+            icon: Icons.react.icons,
+            link: Icons.react.link,
           },
           {
-            icon: Icons.redux,
-            link: "https://redux.js.org/",
+            icon: Icons.redux.icons,
+            link: Icons.redux.link,
           },
           {
-            icon: Icons.react_router,
-            link: "https://reactrouter.com/",
+            icon: Icons.react_router.icons,
+            link: Icons.react_router.link,
           },
           {
-            icon: Icons.tailwind,
-            link: "https://tailwindcss.com/",
+            icon: Icons.tailwind.icons,
+            link: Icons.tailwind.link,
           },
         ],
         desc1:
@@ -113,12 +113,44 @@ let projects = [
       },
     ],
   },
-  // {
-  //   id: "ml",
-  //   title: "MACHINE LEARNING",
-  //   logo: "oui:ml-regression-job",
-  //   content: [],
-  // },
+  {
+    id: "ml",
+    title: "MACHINE LEARNING",
+    logo: "oui:ml-regression-job",
+    content: [
+      {
+        pid: "flight",
+        name: "Flight Price Prediction",
+        short_description: "Machine Learning Model to predict flight Price",
+        logo: "/assets/flight_logo.png",
+        link: "https://huggingface.co/spaces/SamiThakur/flight_price_prediction",
+        image: "flight_pic.png",
+        github: "https://github.com/SAMI-THAKUR/flight_price_prediction",
+        tech_stack: [
+          {
+            icon: Icons.python.icons,
+            link: Icons.python.link,
+          },
+          {
+            icon: Icons.sklearn.icons,
+            link: Icons.sklearn.link,
+          },
+          {
+            icon: Icons.seaborn.icons,
+            link: Icons.seaborn.link,
+          },
+          {
+            icon: Icons.streamlit.icons,
+            link: Icons.streamlit.link,
+          },
+          {
+            icon: Icons.pandas.icons,
+            link: Icons.pandas.link,
+          },
+        ],
+      },
+    ],
+  },
   {
     id: "frontend",
     title: "FRONTEND",
@@ -134,24 +166,24 @@ let projects = [
         image: "portfolio_pic.png",
         tech_stack: [
           {
-            icon: Icons.react,
-            link: "vscode-icons:file-type-reactjs",
+            icon: Icons.react.icons,
+            link: Icons.react.link,
           },
           {
-            icon: Icons.react_router,
-            link: "https://reactrouter.com/",
+            icon: Icons.react_router.icons,
+            link: Icons.react_router.link,
           },
           {
-            icon: Icons.firebase,
-            link: "https://firebase.google.com/",
+            icon: Icons.firebase.icons,
+            link: Icons.firebase.link,
           },
           {
-            icon: Icons.css,
-            link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            icon: Icons.css.icons,
+            link: Icons.css.link,
           },
           {
-            icon: Icons.tailwind,
-            link: "https://tailwindcss.com/",
+            icon: Icons.tailwind.icons,
+            link: Icons.tailwind.link,
           },
         ],
         desc1:
@@ -169,20 +201,20 @@ let projects = [
         image: "pixel_pic.png",
         tech_stack: [
           {
-            icon: Icons.react,
-            link: "https://reactjs.org/",
+            icon: Icons.react.icons,
+            link: Icons.react.link,
           },
           {
-            icon: Icons.redux,
-            link: "https://redux.js.org/",
+            icon: Icons.redux.icons,
+            link: Icons.redux.link,
           },
           {
-            icon: Icons.css,
-            link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            icon: Icons.css.icons,
+            link: Icons.css.link,
           },
           {
-            icon: Icons.tailwind,
-            link: "https://tailwindcss.com/",
+            icon: Icons.tailwind.icons,
+            link: Icons.tailwind.link,
           },
         ],
         desc1:
@@ -200,24 +232,24 @@ let projects = [
         image: "xchange_pic.png",
         tech_stack: [
           {
-            icon: Icons.react,
-            link: "https://reactjs.org/",
+            icon: Icons.react.icons,
+            link: Icons.react.link,
           },
           {
-            icon: Icons.redux,
-            link: "https://redux.js.org/",
+            icon: Icons.redux.icons,
+            link: Icons.redux.link,
           },
           {
-            icon: Icons.rapid,
-            link: "https://www.exchangerate-api.com/docs/standard-requests",
+            icon: Icons.rapid.icons,
+            link: Icons.rapid.link,
           },
           {
-            icon: Icons.css,
-            link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            icon: Icons.css.icons,
+            link: Icons.css.link,
           },
           {
-            icon: Icons.tailwind,
-            link: "https://tailwindcss.com/",
+            icon: Icons.tailwind.icons,
+            link: Icons.tailwind.link,
           },
         ],
         desc1:
@@ -235,16 +267,16 @@ let projects = [
         image: "link_pic.png",
         tech_stack: [
           {
-            icon: Icons.react,
-            link: "https://reactjs.org/",
+            icon: Icons.react.icons,
+            link: Icons.react.link,
           },
           {
-            icon: Icons.css,
-            link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            icon: Icons.css.icons,
+            link: Icons.css.link,
           },
           {
-            icon: Icons.tailwind,
-            link: "https://tailwindcss.com/",
+            icon: Icons.tailwind.icons,
+            link: Icons.tailwind.link,
           },
         ],
         desc1:
@@ -269,8 +301,8 @@ let projects = [
         image: "phone_sales_pic.png",
         tech_stack: [
           {
-            icon: Icons.excel,
-            link: "https://www.microsoft.com/en-in/microsoft-365/excel",
+            icon: Icons.excel.icons,
+            link: Icons.excel.link,
           },
         ],
         desc1:
