@@ -10,28 +10,30 @@ export default {
         m: "50px",
       },
       colors: {
-        transparent: "transparent",
-        current: "currentColor",
-        white: "#c5c5c5",
-        background: "#f4f4f4",
-        darkbg: "#21262d",
-        secondary: "#B4B4B8",
-        dsecondary: "#212A3E",
-        htext: "#272829",
-        dhtext: "#d5d5d5",
-        text: "#333333",
-        dtext: "#d6d6d6",
+        darkBG: "#181C14", // Dark theme background
+        BG: "#F5F5F5", // Light theme background - a softer off-white
+        darkHEADING: "#77CDFF", // Dark theme heading
+        HEADING: "#024CAA", // Light theme heading - keeping it bold
+        darkSUBTEXT: "#FFFAFA", // Dark theme subtext
+        SUBTEXT: "#333333", // Light theme subtext - darker for contrast
+        darkSBG: "#1E201E", // Dark theme sidebar background
+        SBG: "#E0E0E0", // Light theme sidebar background - softer gray
+        darkBorder: "#2F2F2F", // Dark theme border
+        lightBorder: "#BFBFBF", // Light theme border
+        accent: "#2F81AE", // Accent color for light theme buttons/links
       },
+
       fontFamily: {
         sans: ["ui-sans-serif", "system-ui"],
         serif: ["ui-serif", "Georgia"],
-        staat: ["Author", "sans-serif"],
-        robo: ["Roboto Mono", "ui-monospace", "system-ui"],
+        staat: ["Saira Stencil One", "sans-serif"],
+        robo: ["Chakra Petch", "sans-serif", "system-ui"],
+        tourney: ["Tourney", "sans-serif"],
       },
     },
     screens: {
       xsm: "500px",
-      sm: "640px",
+      sm: "800px",
       // => @media (min-width: 640px) { ... }
 
       md: "800px",
@@ -53,8 +55,7 @@ export default {
       "3xl": "1.953rem",
       "4xl": "2.441rem",
       "5xl": "3.052rem",
-      heading: "70px",
-      mheading: "65px",
+      heading: "75px",
       subheading: "43px",
       msubheading: "37px",
       icon: "28px",

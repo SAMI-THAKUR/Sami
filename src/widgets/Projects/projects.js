@@ -193,7 +193,7 @@ let projects = [
       },
       {
         pid: "pixel",
-        name: "Pixel_Resume~",
+        name: "Pixel_Resume",
         short_description: "Interactive Text Resume",
         logo: "/assets/pixel_logo.png",
         link: "https://pixel-resume.vercel.app/",

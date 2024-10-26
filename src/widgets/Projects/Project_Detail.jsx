@@ -1,6 +1,17 @@
-import { projects } from "./projects";
-import { NavLink, useParams } from "react-router-dom";
+import React from "react";
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import { NavLink, useParams } from "react-router-dom";
+import { projects } from "./projects";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerChildren = {
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 export default function ProductDetail() {
   const { id, pid } = useParams();
@@ -8,66 +19,112 @@ export default function ProductDetail() {
   const content = project.content.find((content) => content.pid === pid);
 
   return (
-    <section className=" pl-10 sm:pl-20 lg:pl-32 py-36 pb-10 dark:bg-darkbg bg-background pr-10">
-      <div class="max-w-xl mx-auto">
-        <NavLink to="/project">
-          <div class="flex  gap-1 mb-6 align-middle cursor-pointer">
-            <Icon icon="ion:caret-back" className="text-base text-[#404258] dark:text-[#b5b5b5] flex align-middle my-auto" />
-            <h1 class="font-mono  tracking-wide text-[18px]   max-w-sm text-[#404258] dark:text-[#b5b5b5]">Projects</h1>
-          </div>
-        </NavLink>
-        <div class="flex items-start justify-between mb-6 align-middle">
-          <h1 class="font-staat  tracking-wide- md:text-4xl text-2xl mt-1 sm:mt-0   max-w-sm dark:text-dhtext text-htext">{content.name}</h1>
-
-          <div className="flex flex-wrap mt-2 align-middle">
-            {content.link && (
-              <a
-                href={content.link}
-                target="_blank"
-                class="dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-htext dark:hover:border-dhtext  transition duration-200"
-              >
-                <Icon icon="akar-icons:link-out" className="text-xl sm:text-2xl text-htext dark:text-dhtext" />
-              </a>
-            )}
-            {content.github && (
-              <a
-                href={content.github}
-                target="_blank"
-                class="dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-htext dark:hover:border-dhtext  transition duration-200"
-              >
-                <Icon icon="bi:github" className="text-xl sm:text-2xl text-htext dark:text-dhtext" />
-              </a>
-            )}
-          </div>
-        </div>
-
-        <figure className="max-w-lg flex items-center justify-center">
-          <img
-            className="h-auto max-w-full  border-[1px] dark:border-dhtext border-htext mt-1 p-2 object-cover "
-            src={`/assets/${content.image}`}
-          ></img>
-        </figure>
-        <div className="mt-6 dark:text-zinc-400 text-zinc-600 leading-relaxed">
-          <div className="font-staat font-semibold text-htext dark:text-dhtext text-[30px] tracking-wider">Tech Stack</div>
-          <div className="flex flex-wrap mb-4 -ml-3">
-            {content.tech_stack.map((tech, index) => {
-              return (
-                <a
-                  href={tech.link}
-                  target="_blank"
-                  key={index}
-                  class="dark:bg-primary-bg bg-secondary-bg border border-transparent rounded-md px-3 py-2 cursor-pointer hover:border-htext dark:hover:border-dhtext hover:-translate-y-0.5 transition duration-200"
-                >
-                  <Icon icon={tech.icon} className="text-[25px] text-[#404258] dark:text-[#b5b5b5] hover:text-htext dark:hover:text-dhtext" />
-                </a>
-              );
-            })}
-          </div>
-          <div className="font-staat font-semibold text-htext dark:text-dhtext text-[30px] tracking-wider">Overview</div>
-          <p className="mt-2 mb-6 font-robo text-[12px] sm:text-[15px] tracking-wide text-[#404258] dark:text-[#b5b5b5]">{content.desc1}</p>
-          <p className="mt-2 mb-6 font-robo text-[12px] sm:text-[15px] tracking-wide text-[#404258] dark:text-[#b5b5b5]">{content.desc2}</p>
-        </div>
+    <section className="min-h-screen  p-3 sm:p-8">
+      <div className="container mx-auto max-w-6xl">
+        <motion.div className="grid grid-cols-4 gap-4" variants={staggerChildren} initial="hidden" animate="visible">
+          <BackButton />
+          <ProjectTitle name={content.name} />
+          <ProjectImage image={content.image} />
+          <ProjectLinks link={content.link} github={content.github} />
+          <ProjectDescription desc1={content.desc1} desc2={content.desc2} />
+          <TechStack techStack={content.tech_stack} />
+        </motion.div>
       </div>
     </section>
+  );
+}
+
+function BackButton() {
+  return (
+    <motion.div className="col-span-4 mb-4" variants={fadeInUp}>
+      <NavLink
+        to="/project"
+        className="inline-flex items-center px-4 py-2 bg-SBG dark:bg-darkSBG rounded-xl border-[1px] border-transparent hover:border-HEADING dark:hover:border-darkHEADING transition-colors duration-300"
+      >
+        <Icon icon="ion:caret-back" className="mr-2" />
+        <span className="font-medium">Back to Projects</span>
+      </NavLink>
+    </motion.div>
+  );
+}
+
+function ProjectTitle({ name }) {
+  return (
+    <motion.div className="col-span-4 bg-SBG dark:bg-darkSBG rounded-3xl p-6" variants={fadeInUp}>
+      <h1 className="text-3xl md:text-4xl font-tourney text-HEADING dark:text-darkHEADING">{name}</h1>
+    </motion.div>
+  );
+}
+
+function ProjectImage({ image }) {
+  return (
+    <motion.div className="col-span-4 md:col-span-2 row-span-2 bg-SBG dark:bg-darkSBG rounded-3xl overflow-hidden" variants={fadeInUp}>
+      <img className="w-full h-full object-cover" src={`/assets/${image}`} alt="Project Preview" />
+    </motion.div>
+  );
+}
+
+function ProjectLinks({ link, github }) {
+  return (
+    <motion.div className="col-span-4 md:col-span-2 row-span-1 bg-SBG dark:bg-darkSBG rounded-3xl p-6 font-robo" variants={fadeInUp}>
+      <h2 className="text-xl font-bold text-HEADING dark:text-darkHEADING mb-4 tracking-widest">Project Links</h2>
+      <div className="flex flex-col sm:flex-row gap-4">
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex text-lg font-semibold items-center justify-center px-4 py-2 bg-HEADING dark:bg-darkHEADING text-BG dark:text-darkBG rounded-md hover:opacity-80 transition-opacity duration-300"
+          >
+            <Icon icon="akar-icons:link-out" className="mr-2" />
+            Live Demo
+          </a>
+        )}
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex text-lg font-semibold  items-center justify-center px-4 py-2 bg-HEADING dark:bg-darkHEADING text-BG dark:text-darkBG rounded-md hover:opacity-80 transition-opacity duration-300"
+          >
+            <Icon icon="bi:github" className="mr-2" />
+            GitHub
+          </a>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
+function TechStack({ techStack }) {
+  return (
+    <motion.div className="col-span-4 order-3 md:order-4 md:col-span-2 row-span-1 bg-SBG dark:bg-darkSBG rounded-3xl p-6" variants={fadeInUp}>
+      <h2 className="text-xl font-bold text-HEADING dark:text-darkHEADING mb-4 font-robo tracking-widest">Tech Stack</h2>
+      <div className="flex flex-wrap gap-2">
+        {techStack.map((tech, index) => (
+          <a
+            key={index}
+            href={tech.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center p-3 rounded-2xl bg-BG dark:bg-darkBG text-SUBTEXT dark:text-darkSUBTEXT border-[1px] border-transparent hover:border-HEADING dark:hover:border-darkHEADING transition-colors duration-300"
+          >
+            <Icon icon={tech.icon} className="text-3xl" />
+          </a>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+function ProjectDescription({ desc1, desc2 }) {
+  return (
+    <motion.div className="col-span-4 order-4 md:order-3 md:col-span-2 row-span-2  bg-SBG dark:bg-darkSBG rounded-3xl p-6" variants={fadeInUp}>
+      <h2 className="text-xl font-bold text-HEADING dark:text-darkHEADING mb-4 font-robo tracking-widest">Project Overview</h2>
+      <div className="space-y-4 text-SUBTEXT dark:text-darkSUBTEXT font-robo tracking-wide">
+        <p>{desc1}</p>
+        <p>{desc2}</p>
+      </div>
+    </motion.div>
   );
 }

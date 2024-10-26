@@ -1,44 +1,68 @@
+import React from "react";
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
+const fadeInUp = {
+  hidden: { opacity: 1, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerChildren = {
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
 export default function Education() {
+  const educationData = [
+    {
+      name: "BE in Artificial Intelligence",
+      institution: "VESIT-Mumbai",
+      time: "2022 - 2026",
+      percentage: "CGPA: 9.4",
+    },
+    {
+      name: "HSC",
+      institution: "Swami Vivekanand Jr. College",
+      time: "2020 - 2022",
+      percentage: "Percentage: 89%",
+    },
+    {
+      name: "SSC",
+      institution: "D.B.A.V English High School",
+      time: "2019 - 2020",
+      percentage: "Percentage: 91.20%",
+    },
+  ];
+
   return (
-    <div className="bg-background dark:bg-darkbg pb-28 px-10">
-      <div className="font-staat font-semibold text-htext dark:text-dhtext text-[40px] tracking-wider mb-10"># EDUCATION</div>
-      <ol className="items-center sm:flex ">
-        <Li name="BE in Artificial Inetlligence at VESIT-Mumbai" time="2022 - 2026" percentage="CGPA: 9.4"></Li>
-        <Li name="HSC at Swami Vivekanand Jr. College" time="2020 - 2022" percentage="Percentage: 89%"></Li>
-        <li className="relative mb-6 sm:mb-0">
-          <div className="flex items-center">
-            <div className="z-10 flex items-center justify-center w-6 h-6 bg-htext rounded-full ring-0 ring-white dark:bg-dhtext sm:ring-8 dark:ring-dsecondary shrink-0">
-              <Icon icon="tdesign:education" className="text-lg text-background dark:text-darkbg" />
-            </div>
-          </div>
-          <div className="mt-3 sm:pe-8 font-robo">
-            <h3 className="text-xl font-semibold font-staat text-gray-900 dark:text-white tracking-widest">SSC at D.B.A.V English High School</h3>
-            <time className="block mb-2 mt-1 text-base font-normal leading-none text-gray-400 dark:text-gray-500">2019 - 2020</time>
-            <p className="text-lg font-normal text-gray-500 dark:text-gray-400">Percentage: 91.20%</p>
-          </div>
-        </li>
-      </ol>
-    </div>
+    <>
+      <motion.div
+        className="col-span-4 md:col-span-2 md:row-span-3 bg-SBG dark:bg-darkSBG rounded-3xl p-6 overflow-hidden"
+        variants={fadeInUp}
+        animate="visible"
+        initial="hidden"
+        transition={{ duration: 0.4, delay: 0.4 }}
+      >
+        <h2 className="text-3xl sm:text-4xl font-tourney text-HEADING dark:text-darkHEADING mb-4"># EDUCATION</h2>
+        <motion.div className="grid grid-cols-1 gap-7" variants={staggerChildren}>
+          {educationData.map((edu, index) => (
+            <EducationItem key={index} {...edu} />
+          ))}
+        </motion.div>
+      </motion.div>
+    </>
   );
 }
 
-function Li(props) {
-  const { name, time, percentage } = props;
+function EducationItem({ name, institution, time, percentage }) {
   return (
-    <li className="relative mb-6 sm:mb-0">
-      <div className="flex items-center">
-        <div className="z-10 flex items-center justify-center w-6 h-6 bg-htext rounded-full ring-0 ring-white dark:bg-dhtext sm:ring-8 dark:ring-dsecondary shrink-0">
-          <Icon icon="tdesign:education" className="text-lg text-white dark:text-darkbg " />
-        </div>
-        <div className="hidden sm:flex w-full bg-htext h-[1px] dark:bg-dhtext"></div>
+    <motion.div className="bg-BG dark:bg-darkBG rounded-xl p-4">
+      <div className="flex items-center gap-2 mb-2">
+        <Icon icon="carbon:education" className="text-2xl text-HEADING dark:text-darkHEADING" />
+        <h3 className="text-lg font-robo font-semibold text-HEADING dark:text-darkHEADING">{name}</h3>
       </div>
-      <div className="mt-3 sm:pe-16 font-robo">
-        <h3 className="text-xl font-semibold font-staat text-gray-900 dark:text-white tracking-widest">{name}</h3>
-        <time className="block mb-2 mt-1 text-base font-normal leading-none text-gray-400 dark:text-gray-500">{time}</time>
-        <p className="text-lg font-normal text-gray-500 dark:text-gray-400">{percentage}</p>
-      </div>
-    </li>
+      <p className="text-base font-robo  text-SUBTEXT dark:text-darkSUBTEXT">{institution}</p>
+      <p className="text-base font-robo  font-semibold text-HEADING dark:text-darkHEADING ">{percentage}</p>
+      <p className="text-sm font-robo  text-SUBTEXT dark:text-darkSUBTEXT mt-2">{time}</p>
+    </motion.div>
   );
 }
