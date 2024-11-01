@@ -96,7 +96,6 @@ export default function Landing() {
 
           {/* --------------------------------------- Resume section -------------------------------------------- */}
           <motion.NavLink
-            to="/contact"
             className="group/resume order-3 sm:order-5 col-span-1 row-span-1 sm:col-span-1 relative group  bg-SBG dark:bg-darkSBG rounded-3xl border-[1px] border-transparent hover:border-HEADING dark:hover:border-darkHEADING transition-all duration-300 overflow-hidden"
             variants={fadeIn}
             initial="hidden"
@@ -110,26 +109,28 @@ export default function Landing() {
               animate={isVisible ? "visible" : "hidden"}
               transition={{ duration: 0.7, delay: 0.4 }}
             />
-            <div className="relative flex flex-col items-center justify-between h-full p-4">
-              {/* Heading and Icon */}
-              <div className="flex justify-between items-center w-full">
-                <span className="text-HEADING dark:text-darkHEADING  text-xl md:text-3xl font-tourney h-fit group-hover/resume:font-bold transition-all duration-700">
-                  RESUME
-                </span>
-              </div>
-              <Icon
-                icon="formkit:filedoc"
-                className="text-SUBTEXT dark:text-darkSUBTEXT md:text-gray-500 md:dark:text-gray-500 text-2xl transition-all duration-700 group-hover/resume:scale-110 group-hover/skills:text-SUBTEXT dark:group-hover/resume:text-darkSUBTEXT self-end"
-              />
-              {/* Image Background */}
-              <div className="absolute inset-0 z-0">
-                <img
-                  src="assets/resume.png" // Change backslashes to forward slashes for proper path
-                  alt="Resume"
-                  className="h-full w-full object-cover rounded-3xl opacity-10 skills-hover group-hover/resume:opacity-20 group-hover/resume:scale-105 transition-all duration-700" // Adjust opacity for better visibility
+            <a href="https://drive.google.com/file/d/1NlMRcFnermm7nPVv17QIZ-P1zTmfD3i-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <div className="relative flex flex-col items-center justify-between h-full p-4">
+                {/* Heading and Icon */}
+                <div className="flex justify-between items-center w-full">
+                  <span className="text-HEADING dark:text-darkHEADING  text-xl md:text-3xl font-tourney h-fit group-hover/resume:font-bold transition-all duration-700">
+                    RESUME
+                  </span>
+                </div>
+                <Icon
+                  icon="formkit:filedoc"
+                  className="text-SUBTEXT dark:text-darkSUBTEXT md:text-gray-500 md:dark:text-gray-500 text-2xl transition-all duration-700 group-hover/resume:scale-110 group-hover/skills:text-SUBTEXT dark:group-hover/resume:text-darkSUBTEXT self-end"
                 />
+                {/* Image Background */}
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src="assets/resume.png" // Change backslashes to forward slashes for proper path
+                    alt="Resume"
+                    className="h-full w-full object-cover rounded-3xl opacity-10 skills-hover group-hover/resume:opacity-20 group-hover/resume:scale-105 transition-all duration-700" // Adjust opacity for better visibility
+                  />
+                </div>
               </div>
-            </div>
+            </a>
           </motion.NavLink>
           {/* --------------------------------------------- Skills section ----------------------------------------------*/}
           <motion.div
